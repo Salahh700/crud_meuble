@@ -1,0 +1,15 @@
+.meubles {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 5px;
+    gap: 20px;
+}
+
+.meuble {
+    background-color: cornflowerblue;
+    width: 175px;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    padding: 20px;
+}
