@@ -4,11 +4,13 @@
 <?php
     $bdd = new PDO ('mysql:host=localhost;dbname=meubles', 'root', '');
 
-    $requete="SELECT * from meuble;";
+    $id = $_GET["id"];
+
+    $requete="SELECT * from meuble WHERE id=$id;";
 
     $as=$bdd->query($requete);
 
-    $res=$as->fetchAll();
+    $res=$as->fetch();
 ?>
 
 
@@ -18,11 +20,11 @@
     <title>Document</title>
 </head>
     <body>
-        <form action="controllerupdate1.php" method="POST">
+        <form action="controllerupdate1.php?id=<?php echo $res["id"]; ?>" method="POST">
 
-            <input type="text" name="update_nom" placeholder="Remplir un nouveau nom">
-            <input type="text" name="update_prix" placeholder="Remplir un nouveau prix" value=" <?php echo $result['nom']; ?>">
-            <input type="submit" name="valider_update" value="valider_update" value=" <?php echo $result['prix']; ?>" >
+            <input type="text" name="upd_nom" placeholder="Remplir un nouveau nom" value="<?php echo $res['nom']; ?>">
+            <input type="text" name="upd_prix" placeholder="Remplir un nouveau prix" value="<?php echo $res['prix']; ?>">
+            <input type="submit" name="valider_update" value="Valider la modification">
 
         </form>
     </body>
