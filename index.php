@@ -36,7 +36,7 @@
 
                             <h1> <?php echo $result["nom"];  ?> </h1>
                             <p> <?php echo $result["prix"]; ?> </p>
-                            <a href="./controllerdelete.php?id=<?php echo $result["id"]; ?>"><button>Supprimer</button></a>
+                            <a href="./controllerdelete.php?id=<?php echo $result["id"]; ?>"><button onclick="return confirm('Êtes vous sûr de bien vouloir supprimer cet élément ?');">Supprimer</button></a>
                             <a href="./update.php?id=<?php echo $result["id"]; ?>"><button>Modifier</button></a>
 
                         </div>
